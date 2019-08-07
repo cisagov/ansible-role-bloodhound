@@ -1,2 +1,29 @@
 ---
-# tasks file for skeleton
+# tasks file for bloodhound
+- name: Create directory for BloodHound
+  file:
+    path: "/tools/BloodHound"
+    state: directory
+
+- name: Install the package "unzip" for Bloodhound
+  apt:
+    name: unzip
+
+- name: Install the package "neo4j" for BloodHound
+  apt:
+    name: bloodhound
+
+- name: Download and untar the BloodHound tarball
+  unarchive:
+    src: "https://github.com/BloodHoundAD/BloodHound/tarball/master"
+    dest: /tools/BloodHound
+    remote_src: yes
+    extra_opts:
+      - "--strip-components=1"
+
+- name: Download and unzip the BloodHound release
+  unarchive:
+    src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.0\
+      /BloodHound-linux-x64.zip"
+    dest: /tools/BloodHound
+    remote_src: yes
