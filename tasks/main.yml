@@ -9,7 +9,7 @@
   apt:
     name: unzip
 
-- name: Install the package "neo4j" for BloodHound
+- name: Install the package "bloodhound" to get dependencies like Neo4j
   apt:
     name: bloodhound
 
