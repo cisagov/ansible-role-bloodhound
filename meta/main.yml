@@ -14,5 +14,4 @@ galaxy_info:
     - bloodhound
 
 dependencies:
-  - src: https://github.com/cisagov/ansible-role-upgrade
-    name: upgrade
+  []
