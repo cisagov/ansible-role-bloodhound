@@ -6,24 +6,15 @@
     state: directory
 
 # We will install a BloodHound release, but we go ahead and install
-# the bloodhound package here so we get all dependencies
-- name: Install the bloodhound package
-  apt:
-    name: bloodhound
-
-- name: Download and untar the BloodHound tarball
-  unarchive:
-    src: "https://github.com/BloodHoundAD/BloodHound/tarball/master"
-    dest: /tools/BloodHound
-    remote_src: yes
-    extra_opts:
-      - "--strip-components=1"
-
-- name: Install the unzip package
+# the bloodhound package here so we get all dependencies.  We also
+# need unzip to extract the download.
+- name: Install the unzip and bloodhound packages
   package:
-    name: unzip
+    name:
+      - bloodhound
+      - unzip
 
-- name: Download and unzip the BloodHound release
+- name: Download and extract the release
   unarchive:
     src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.1\
     /BloodHound-linux-x64.zip"
