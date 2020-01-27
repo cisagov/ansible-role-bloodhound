@@ -1,22 +1,5 @@
 ---
-# tasks file for bloodhound
-- name: Create directory for BloodHound
-  file:
-    path: "/tools/BloodHound"
-    state: directory
-
-# We will install a BloodHound release, but we go ahead and install
-# the bloodhound package here so we get all dependencies.  We also
-# need unzip to extract the download.
-- name: Install the unzip and bloodhound packages
+- name: Install bloodhound
   package:
     name:
       - bloodhound
-      - unzip
-
-- name: Download and extract the release
-  unarchive:
-    src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.1\
-    /BloodHound-linux-x64.zip"
-    dest: /tools/BloodHound
-    remote_src: yes
