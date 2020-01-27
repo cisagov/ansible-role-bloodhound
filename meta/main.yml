@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   author: Kyle Evers
-  description: Ansible role for install BloodHound
-  company: CISA NCATS
+  description: Ansible role for installing BloodHound
+  company: CISA Cyber Assessments
   license: CC0
   min_ansible_version: 2.0
   platforms:
