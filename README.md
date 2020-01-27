@@ -9,8 +9,7 @@ This is an ansible role for installing
 
 ## Requirements ##
 
-This role uses the `upgrade` Ansible module, [found
-here](https://github.com/cisagov/ansible-role-upgrade).
+None.
 
 ## Role Variables ##
 
