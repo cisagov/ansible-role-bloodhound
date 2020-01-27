@@ -5,11 +5,9 @@
     path: "/tools/BloodHound"
     state: directory
 
-- name: Install the package "unzip" for Bloodhound
-  apt:
-    name: unzip
-
-- name: Install the package "bloodhound" to get dependencies like Neo4j
+# We will install a BloodHound release, but we go ahead and install
+# the bloodhound package here so we get all dependencies
+- name: Install the bloodhound package
   apt:
     name: bloodhound
 
@@ -21,9 +19,13 @@
     extra_opts:
       - "--strip-components=1"
 
+- name: Install the unzip package
+  package:
+    name: unzip
+
 - name: Download and unzip the BloodHound release
   unarchive:
     src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.1\
-      /BloodHound-linux-x64.zip"
+    /BloodHound-linux-x64.zip"
     dest: /tools/BloodHound
     remote_src: yes
