@@ -4,11 +4,13 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-bloodhound.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-bloodhound/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-bloodhound.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-bloodhound/context:python)
 
-This is an ansible role for installing [BloodHound](https://github.com/BloodHoundAD/BloodHound)
+This is an ansible role for installing
+[BloodHound](https://github.com/BloodHoundAD/BloodHound).
 
 ## Requirements ##
 
-This role uses the `upgrade` Ansible module, [found here](https://github.com/cisagov/ansible-role-upgrade).
+This role uses the `upgrade` Ansible module, [found
+here](https://github.com/cisagov/ansible-role-upgrade).
 
 ## Role Variables ##
 
