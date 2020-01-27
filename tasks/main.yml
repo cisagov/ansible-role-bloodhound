@@ -23,7 +23,7 @@
 
 - name: Download and unzip the BloodHound release
   unarchive:
-    src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.0\
+    src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.1\
       /BloodHound-linux-x64.zip"
     dest: /tools/BloodHound
     remote_src: yes
