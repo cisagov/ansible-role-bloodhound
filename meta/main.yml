@@ -6,10 +6,12 @@ galaxy_info:
   license: CC0
   min_ansible_version: 2.0
   platforms:
+    # Kali linux is not a platform that can be specified here, but
+    # since Kali is based on Debian testing it makes sense to specify
+    # Debian bullseye here.
     - name: Debian
       versions:
-        - stretch
-        - buster
+        - bullseye
   galaxy_tags:
     - bloodhound
 
