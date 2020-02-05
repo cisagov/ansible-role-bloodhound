@@ -1,29 +1,21 @@
 ---
 # tasks file for bloodhound
-- name: Create directory for BloodHound
+- name: Install bloodhound via apt module
+  apt:
+    name: 'bloodhound'
+
+- name: Create directory for each tool
   file:
     path: "/tools/BloodHound"
     state: directory
 
-- name: Install the package "unzip" for Bloodhound
-  apt:
-    name: unzip
-
-- name: Install the package "bloodhound" to get dependencies like Neo4j
-  apt:
-    name: bloodhound
-
-- name: Download and untar the BloodHound tarball
+- name: download Bloodhound source as backup
   unarchive:
-    src: "https://github.com/BloodHoundAD/BloodHound/tarball/master"
+    src: "https://github.com/BloodHoundAD/BloodHound/archive/2.2.1.tar.gz"
     dest: /tools/BloodHound
     remote_src: yes
     extra_opts:
       - "--strip-components=1"
 
-- name: Download and unzip the BloodHound release
-  unarchive:
-    src: "https://github.com/BloodHoundAD/BloodHound/releases/download/2.2.0\
-      /BloodHound-linux-x64.zip"
-    dest: /tools/BloodHound
-    remote_src: yes
+- name: set initial neo4j password used by bloodhound
+  command: /usr/share/neo4j/bin/neo4j-admin set-initial-password "{{ bloodhound_password }}"

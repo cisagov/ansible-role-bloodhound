@@ -1,0 +1,5 @@
+---
+# vars file for bloodhound
+
+# The postgres database password for neo4j andbloodhound
+bloodhound_password: "{{ lookup('aws_ssm', '/kali/bloodhound_password') }}"
