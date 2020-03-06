@@ -3,3 +3,13 @@
   package:
     name:
       - bloodhound
+
+# Bloodhound will not work unless you change the neo4j password from
+# the default value.
+#
+# I don't see a way to detect when this actually needs to be run, so I
+# am setting changed_when to False.
+- name: Set neo4j password
+  command:
+    cmd: /usr/share/neo4j/bin/neo4j-admin set-initial-password {{ password }}
+  changed_when: False
