@@ -1,0 +1,5 @@
+---
+# defaults file for ansible-role-bloodhound
+
+# Generate a random neo4j password and save it to /tmp
+password: "{{ lookup('password', '/tmp/neo4j_password.txt') }}"
