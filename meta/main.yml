@@ -3,6 +3,8 @@ galaxy_info:
   author: Kyle Evers
   description: Ansible role for installing BloodHound
   company: CISA Cyber Assessments
+  galaxy_tags:
+    - bloodhound
   license: CC0
   min_ansible_version: 2.0
   platforms:
@@ -12,8 +14,6 @@ galaxy_info:
         # Debian Testing:
         # https://www.kali.org/docs/policy/kali-linux-relationship-with-debian
         - bullseye
-  galaxy_tags:
-    - bloodhound
+  role_name: bloodhound
 
-dependencies:
-  []
+dependencies: []
