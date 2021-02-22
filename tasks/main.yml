@@ -1,6 +1,6 @@
 ---
 - name: Install bloodhound
-  package:
+  ansible.builtin.package:
     name:
       - bloodhound
 
@@ -10,6 +10,6 @@
 # I don't see a way to detect when this actually needs to be run, so I
 # am setting changed_when to False.
 - name: Set neo4j password
-  command:
+  ansible.builtin.command:
     cmd: /usr/share/neo4j/bin/neo4j-admin set-initial-password {{ password }}
   changed_when: False
