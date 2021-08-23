@@ -13,14 +13,9 @@ None.
 
 ## Role Variables ##
 
-None.
-
-<!--
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| optional_variable | Describe its purpose. | `default_value` | No |
-| required_variable | Describe its purpose. | n/a | Yes |
--->
+| password | The password used for `neo4j`. | Random password created with the [Ansible password module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/password_lookup.html). | No |
 
 ## Dependencies ##
 
