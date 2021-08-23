@@ -13,7 +13,9 @@ None.
 
 ## Role Variables ##
 
-None.
+| Variable | Description | Default | Required |
+|----------|-------------|---------|----------|
+| password | The password used for `neo4j`. | Random password created with the [Ansible password module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/password_lookup.html). | No |
 
 ## Dependencies ##
 
