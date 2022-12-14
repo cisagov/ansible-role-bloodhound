@@ -4,12 +4,30 @@
     name:
       - bloodhound
 
+- name: Gather the package facts
+  ansible.builtin.package_facts:
+
+- name: Get version of the installed neo4j package
+  ansible.builtin.set_fact:
+    installed_neo4j_version: "{{ ansible_facts.packages['neo4j'] | map(attribute='version') | first }}"
+
 # Bloodhound will not work unless you change the neo4j password from
 # the default value.
 #
 # I don't see a way to detect when this actually needs to be run, so I
 # am setting changed_when to False.
 - name: Set neo4j password
-  ansible.builtin.command:
-    cmd: /usr/share/neo4j/bin/neo4j-admin set-initial-password {{ password }}
-  changed_when: False
+  block:
+    - name: Set neo4j password on version < 5
+      ansible.builtin.command:
+        cmd: /usr/share/neo4j/bin/neo4j-admin set-initial-password {{ password }}
+      changed_when: False
+      no_log: True
+      when: "installed_neo4j_version is version('5.0', '<')"
+
+    - name: Set neo4j password on version >= 5
+      ansible.builtin.command:
+        cmd: /usr/share/neo4j/bin/neo4j-admin dbms set-initial-password {{ password }}
+      changed_when: False
+      no_log: True
+      when: "installed_neo4j_version is version('5.0', '>=')"
