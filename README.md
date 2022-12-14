@@ -1,8 +1,7 @@
 # ansible-role-bloodhound #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-bloodhound/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-bloodhound/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-bloodhound.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-bloodhound/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-bloodhound.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-bloodhound/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-bloodhound/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-bloodhound/actions/workflows/codeql-analysis.yml)
 
 This is an ansible role for installing
 [BloodHound](https://github.com/BloodHoundAD/BloodHound).
@@ -29,8 +28,10 @@ Here's how to use it in a playbook:
 - hosts: all
   become: yes
   become_method: sudo
-  roles:
-    - bloodhound
+  tasks:
+    - name: Install BloodHound
+      ansible.builtin.include_role:
+        name: bloodhound
 ```
 
 ## Contributing ##
