@@ -1,5 +1,14 @@
 # ansible-role-bloodhound #
 
+## ⚠ Notice ⚠ ##
+
+This project has been archived, as this Ansible role is not currently
+being used.  It was used in
+[cisagov/kali-packer](https://github.com/cisagov/kali-packer), but the
+assessors asked for the most recent version of Bloodhound from GitHub
+to be installed instead.  If this Ansible role is ever put into
+service again, it can be unarchived.
+
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-bloodhound/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-bloodhound/actions)
 [![CodeQL](https://github.com/cisagov/ansible-role-bloodhound/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-bloodhound/actions/workflows/codeql-analysis.yml)
 
